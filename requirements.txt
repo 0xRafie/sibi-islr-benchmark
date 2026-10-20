@@ -1,0 +1,23 @@
+# Core (keypoint extraction, preprocessing, BiLSTM, SignBart, DSTA-SLR, evaluation, figures)
+numpy==2.0.2
+scipy==1.16.3
+scikit-learn==1.6.1
+torch==2.10.0
+matplotlib==3.11.2
+mediapipe==0.10.14        # keep this version: the BiLSTM baseline uses the legacy Holistic API
+opencv-python==5.0.0.93
+pyyaml==6.0.3
+protobuf==4.25.9
+
+# RTMW keypoints (GPU)
+rtmlib
+onnxruntime-gpu==1.22.0
+
+# Uni-Sign (cloned at run time, see scripts/unisign_features.py)
+transformers==4.40.0
+sentencepiece
+einops
+huggingface_hub
+
+# SHuBERT features (see scripts/shubert_features.py; stage b runs in the authors' fairseq environment, Python 3.10)
+decord==0.6.0
