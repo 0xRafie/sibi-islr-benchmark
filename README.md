@@ -75,9 +75,10 @@ access:
 
 ## Released model
 
-A Uni-Sign (pose) model fine-tuned on all 22 signers will be released on Hugging Face under CC BY-NC 4.0. That is the
-license of the Uni-Sign weights it starts from, and it matches the non-commercial terms of the data. Its expected accuracy
-on a new signer is the SI result above.
+A Uni-Sign (pose) model fine-tuned on all 22 signers is released on Hugging Face at
+[0xRafie/uni-sign-sibi](https://huggingface.co/0xRafie/uni-sign-sibi) under CC BY-NC 4.0. That is the license of the
+Uni-Sign weights it starts from, and it matches the non-commercial terms of the data. Its expected accuracy on a new signer
+is the SI result above.
 
 ## License
 
