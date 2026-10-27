@@ -31,6 +31,15 @@ The SIBI dataset of Darmawan et al. is available from its owner under a data use
 This repository contains **no** videos, images, keypoints, fold files, or predictions. The fold files are regenerated
 from the dataset with `scripts/folds.py`. Please cite the dataset articles required by the agreement.
 
+Two lists are released, with file names and frame numbers only:
+
+- `lists/clips.csv`: the 22,671 clips used after cleaning (106 removed): `clip` (path without extension), `category`
+  (affix, number, alphabet, word), `class`, `signer`, `take`.
+- `lists/word_boundaries.csv`: where each of the 4,507 word clips lies in its neutral sentence video (1,099 of the 1,100
+  videos; `subject-4-sentence-7-neutral-rep-1` is left out). `frame_start` and `frame_end` are 0-based frame indices at
+  30 fps, and the word spans `[frame_start, frame_end)`. `token_index` is the position of the word in the sentence's
+  sign sequence. `source` is `manual` for boundaries corrected by an annotator and `forced_alignment` otherwise.
+
 ## Setup
 
 Python 3.12 with the pinned packages in `requirements.txt` (MediaPipe must stay at 0.10.14, the version the BiLSTM baseline
