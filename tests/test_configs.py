@@ -13,8 +13,7 @@ import pytest
 
 from sibi_islr import config
 
-sys.path.insert(0, str(Path(__file__).resolve().parent))
-from reference_map import MAP  # noqa: E402
+from reference_map import MAP  # tests/ is on sys.path under pytest and when run as a script
 
 CONFIGS = sorted((Path(__file__).resolve().parents[1] / "configs").glob("*.yaml"))
 REF = os.environ.get("SIBI_REFERENCE_SCRIPTS")

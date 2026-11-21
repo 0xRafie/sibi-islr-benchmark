@@ -10,8 +10,7 @@ from pathlib import Path
 
 import pytest
 
-sys.path.insert(0, str(Path(__file__).resolve().parent))
-from reference_map import MAP  # noqa: E402
+from reference_map import MAP  # tests/ is on sys.path under pytest and when run as a script
 
 PKG = Path(__file__).resolve().parents[1] / "sibi_islr"
 REF = os.environ.get("SIBI_REFERENCE_SCRIPTS")
