@@ -10,7 +10,7 @@ Muhamad Syukron, Raden Ajeng Aninditha Tazkia Ariniputri, Danish Rafie Ekaputra
 
 </div>
 
-![Framework of Uni-Sign (pose) as fine-tuned in this benchmark: RTMW keypoints, the per-part pose encoder, the mT5 encoder, and a linear classifier over 114 classes](assets/overview.png)
+![Framework of Uni-Sign (pose) as fine-tuned in this benchmark: RTMW keypoints, the per-part pose encoder, the mT5 encoder, and a linear classifier over 114 classes](assets/unisign_framework.png)
 
 <sub>Uni-Sign (pose) as fine-tuned here. Video frames from the online SIBI dictionary.</sub>
 
@@ -169,7 +169,7 @@ prepare_data.py, train.py, evaluate.py, make_figures.py, explain.py   entry poin
 configs/        settings of the paper runs, one YAML per model (+ data.yaml)
 scripts/        one shell script per paper table or figure, prepare_data.sh, reproduce_all.sh
 lists/          clips.csv, word_boundaries.csv
-assets/         overview figure
+assets/         README figure (Uni-Sign framework)
 sibi_islr/
   config.py     paths (command line > SIBI_* > defaults) and YAML loading
   data/         inventory, extract_mediapipe, extract_rtmw, trim, pack, features (F0 input), folds,
