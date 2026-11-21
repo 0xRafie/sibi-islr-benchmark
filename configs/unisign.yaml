@@ -1,0 +1,22 @@
+# Uni-Sign (pose) fine-tuning with the official ISLR recipe (script/train_stage3.sh), RTMW input (69 keypoints).
+# Settings of the paper runs; tests/test_configs.py checks that every value equals the code.
+model: unisign
+recipes:
+  sibi_islr.training.unisign.RECIPE:
+    lr: 3.0e-4
+    eps: 1.0e-9
+    wd: 1.0e-4
+    epochs: 20
+    batch: 32
+    smoothing: 0.2
+reference:
+  options:                        # defaults of the command-line options of training/unisign.py
+    folds: ["0-99"]
+    seeds: ["0"]
+    epochs: 20
+    device: cuda
+    shard: "0/1"
+  max_len: 64                     # frames per clip (sibi_islr.models.unisign.MAX_LEN)
+  mt5: google/mt5-base            # $UNISIGN_MT5
+  paper_run: "combined rtmw_affix.npz,rtmw_number.npz,rtmw_alphabet.npz,rtmw_kata.npz <out> --protocol cl --folds <k> --seeds 0 --epochs 20"
+  released_model: "same command with --protocol all --save-dir <dir>"

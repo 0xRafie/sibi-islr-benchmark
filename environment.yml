@@ -1,0 +1,9 @@
+name: sibi-islr
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pip
+  - pip:
+      - -e ".[dev]"
+      # GPU extras: pip install -e ".[rtmw,unisign,shubert]"

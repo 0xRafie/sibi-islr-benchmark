@@ -1,0 +1,14 @@
+# SignBart with the recipe of its official repository (scripts/train_LSA-64.sh, configs/LSA-64.yaml), mp48 input.
+# Settings of the paper runs; tests/test_configs.py checks that every value equals the code.
+model: signbart
+recipes:
+  sibi_islr.training.slot2_inputs.SIGNBART:
+    epochs: 200
+    lr: 2.0e-4
+    batch: 1
+    factor: 0.1
+    patience: 5
+    p_aug: 0.4
+reference:
+  repository: [https://github.com/TinhNguyen2312/SignBart, 1b7d3d1]
+  paper_run: "full signbart <fold> batch=128 meanloss mp48 proto=cl cat=combined"   # one fold (0-21) per process, seed 0

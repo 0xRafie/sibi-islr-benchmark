@@ -1,0 +1,19 @@
+# SHuBERT + rank-1 LoRA per leave-one-signer-out fold (recipe of Gueuwou et al., ACL 2025, section 4.3).
+# Settings of the paper runs; tests/test_configs.py checks that every value equals the code.
+model: shubert
+recipes:
+  sibi_islr.training.shubert.R:
+    rank: 1
+    scale: 1.0
+    lr_head: 1.0e-4
+    lr_lora: 1.0e-5
+    wd: 1.0e-4
+    smooth: 0.1
+    batch: 128
+    epochs: 125
+    patience: 10
+reference:
+  features_options:               # defaults of `prepare_data.py shubert-features a`
+    stride: 2
+    shard: "0/1"
+  paper_run: "run <frames dir> <out dir> <fold> <fold>"   # environment b (Python 3.10 + the authors' fairseq)

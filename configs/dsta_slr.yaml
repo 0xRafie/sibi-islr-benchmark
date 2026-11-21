@@ -1,0 +1,19 @@
+# DSTA-SLR with the recipe of its official repository (config/train.yaml, main.py), rtmw27 input (27 RTMW points).
+# Settings of the paper runs; tests/test_configs.py checks that every value equals the code.
+model: dsta_slr
+recipes:
+  sibi_islr.training.slot2_inputs.DSTA:
+    epochs: 250
+    lr: 0.1
+    batch: 24
+    momentum: 0.9
+    wd: 1.0e-4
+    warmup: 20
+    step: [150, 200]
+    keep_rate: 0.9
+    shift_px: 10
+    frame_px: 512
+    model: {groups: 16, block_size: 41, inner_dim: 64, depth: 4, drop_layers: 2}
+reference:
+  repository: [https://github.com/hulianyuyy/DSTA-SLR, e7e5ee2]
+  paper_run: "full dsta <fold> epochs=250 rtmw27 proto=cl cat=combined"   # run as two sessions with stop=125 / resume

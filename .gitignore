@@ -1,14 +1,18 @@
 # data, keypoints, results, and weights are never committed
-data/
-ext/
-results/
-weights/
+/data/
+/ext/
+/results/
+/weights/
 *.npz
 *.npy
 *.pt
 *.pth
 *.safetensors
 *.mp4
-qc/
+/qc/
 __pycache__/
 .venv/
+*.egg-info/
+.pytest_cache/
+build/
+/paper/

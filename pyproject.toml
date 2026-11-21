@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sibi_islr"
+version = "1.0.0"
+description = "Signer-independent SIBI isolated sign recognition: a benchmark of skeleton and pretrained models"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE", "NOTICE.md"]
+requires-python = ">=3.10,<3.13"
+authors = [
+    { name = "Muhamad Syukron" },
+    { name = "Raden Ajeng Aninditha Tazkia Ariniputri" },
+    { name = "Danish Rafie Ekaputra" },
+]
+# Core: keypoint extraction (MediaPipe), preprocessing, BiLSTM, SignBart, DSTA-SLR, evaluation, figures.
+dependencies = [
+    "numpy==2.0.2",
+    "scipy==1.16.3",
+    "scikit-learn==1.6.1",
+    "torch==2.10.0",
+    "matplotlib==3.11.2",
+    "mediapipe==0.10.14",       # keep this version: the BiLSTM baseline uses the legacy Holistic API
+    "opencv-python==5.0.0.93",
+    "pyyaml==6.0.3",
+    "protobuf==4.25.9",
+]
+
+[project.optional-dependencies]
+rtmw = ["rtmlib", "onnxruntime-gpu==1.22.0"]                                  # RTMW keypoints (GPU)
+unisign = ["transformers==4.40.0", "sentencepiece", "einops", "huggingface_hub"]  # Uni-Sign (cloned at run time)
+shubert = ["decord==0.6.0", "huggingface_hub"]                                # SHuBERT stage a; stage b runs in the authors' fairseq environment (Python 3.10)
+dev = ["pytest"]
+
+[project.urls]
+Code = "https://github.com/0xRafie/sibi-islr-benchmark"
+Model = "https://huggingface.co/0xRafie/uni-sign-sibi"
+
+[tool.setuptools.packages.find]
+include = ["sibi_islr*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

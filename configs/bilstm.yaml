@@ -1,0 +1,22 @@
+# BiLSTM baseline (Ho and Santoso), F0 input: 2 hands x 21 MediaPipe landmarks x xy, resampled to 30 frames.
+# Settings of the paper runs; tests/test_configs.py checks that every value equals the code.
+model: bilstm
+recipes:                          # train.py writes values that differ into these dictionaries before training
+  sibi_islr.models.bilstm.B1:
+    hidden: 96
+    layers: 2
+    fc: 256
+    dropout: 0.3
+    lr: 1.0e-4
+    step: 5
+    gamma: 0.5
+    epochs: 100
+    batch: 16
+reference:                        # not applied: defaults of the command-line options of training/bilstm.py
+  options:
+    folds: ["0-99"]
+    seeds: ["0-4"]
+    max_hours: 10.5
+    epochs: 100
+    shard: "0/1"
+  paper_run: "--setting combined --protocol cl|cs --seeds 0 1 2 3 4 (SI: folds 0-21, SD: folds 0-4)"

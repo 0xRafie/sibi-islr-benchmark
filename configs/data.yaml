@@ -1,0 +1,7 @@
+# Data preparation settings (not applied; recorded for reference). tests/test_configs.py checks them against the code.
+reference:
+  sibi_islr.data.trim.MIN_RUN: 3          # hand-detection blips shorter than this are removed
+  sibi_islr.data.trim.PAD: 2              # frames kept at both ends of the hand span
+  sibi_islr.data.folds.SEEDS: [0, 1, 2, 3, 4]
+  sibi_islr.data.folds.FIELDS: [relpath, category, class, label, subject, rep, cs, cg, cl, cp]
+  sibi_islr.models.unisign.MAX_LEN: 64
