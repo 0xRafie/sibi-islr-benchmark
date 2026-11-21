@@ -10,7 +10,9 @@ Muhamad Syukron, Raden Ajeng Aninditha Tazkia Ariniputri, Danish Rafie Ekaputra
 
 </div>
 
-![The two evaluation protocols: SD (stratified 5-fold over clips) and SI (leave-one-signer-out)](assets/overview.png)
+![Framework of Uni-Sign (pose) as fine-tuned in this benchmark: RTMW keypoints, the per-part pose encoder, the mT5 encoder, and a linear classifier over 114 classes](assets/overview.png)
+
+<sub>Uni-Sign (pose) as fine-tuned here. Video frames from the online SIBI dictionary.</sub>
 
 Code for a signer-independent benchmark of isolated sign recognition for SIBI (Sistem Isyarat Bahasa Indonesia), the
 signed form of Indonesian taught in Indonesian schools for deaf students. The benchmark covers 114 classes in four
